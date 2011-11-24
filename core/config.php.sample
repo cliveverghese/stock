@@ -1,0 +1,9 @@
+<?php
+define('DB_NAME','');
+define('DB_USER','');
+define('DB_PASSWORD','');
+define('DB_HOST','localhost');
+define('FB_APP_ID', '');
+define('FB_APP_SECRET', '');
+define('BASE','');
+?>
