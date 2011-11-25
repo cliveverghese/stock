@@ -11,15 +11,21 @@
 			{
 				require_once('module/buy.php');
 			}
+			else if($_REQUEST['o'] == "portfolio")
+			{
+				require_once('user/portfolio.php');
+			}
 			else
 			{
 				require_once('module/userhome.php');
-			}
-		}
-		if($_REQUEST['o'] == "login")
+			}		
+}
+		else if($_REQUEST['o'] == "login")
 		{
 			require_once('user/list.php');
 		}
+
+	
 		
 	}
 	else

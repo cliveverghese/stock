@@ -26,6 +26,11 @@
 			week_worth DECIMAL(15,2),
 			short_val DECIMAL(15,2))";
 	$ref = mysql_query($sql);
+	$sql = "CREATE TABLE IF NOT EXISTS stocks_bought(
+			id BIGINT NOT NULL,
+			symbol VARCHAR(20) NOT NULL,
+			amount BIGINT NOT NULL)";
+	$ref = mysql_query($sql);
 
 ?>
 
