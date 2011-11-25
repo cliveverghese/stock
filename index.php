@@ -11,6 +11,10 @@
 			{
 				require_once('module/buy.php');
 			}
+			else if($_REQUEST['o'] == "sell")
+			{
+				require_once('module/sell.php');
+			}
 			else if($_REQUEST['o'] == "portfolio")
 			{
 				require_once('user/portfolio.php');
