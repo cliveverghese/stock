@@ -15,8 +15,8 @@ $jsn = file_get_contents_curl("http://nseindia.com/live_market/dynaContent/live_
 	foreach($jsn_obj->{'data'} as $data)
 	{
 		$sql = "UPDATE stockval SET value = '" . $data->{'ltP'} . "', chnge = '" . $data->{'ptsC'} . "', change_perc = '" . $data->{'per'} . "', day_low = '" . $data->{'low'} . "', day_high = '" . $data->{'high'} . "', week_low = '" . $data->{'wklo'} . "', week_high = '" . $data->{'wkhi'} . "' WHERE symbol = '" . $data->{'symbol'} . "'";
-		mysql_query($sql);		
-		//echo $sql . "<br/>";
+		mysql_query($sql);	
+
 		//$sql = "UPDATE stockval SET `time_stamp` = '$update_time', `value` = '".str_replace(",", "",$data->{'ltP'})."', `change` = '".str_replace(",", "",$data->{'ptsC'})."', `change_perc` = '".str_replace(",", "",$data->{'per'})."', `day_low` = '".str_replace(",", "",$data->{'low'})."', `day_high` = '".str_replace(",", "",$data->{'high'})."', `week_low` = '".str_replace(",", "",$data->{'wklo'})."', `week_high` = '".str_replace(",", "",$data->{'wkhi'})."' WHERE `symbol` = '$data->{'symbol'}';";
 	}
 
