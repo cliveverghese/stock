@@ -1,16 +1,31 @@
 <?php
 	session_start();		
 	require_once('core/bootstrap.php');
-	if(isset($_GET['option']))
+	$content = null;
+	if(isset($_REQUEST['o']))
 	{	
-		if($_GET['option'] == "login")
+
+		if(isset($_SESSION['user']))
+		{
+			if($_REQUEST['o'] == "buy")
+			{
+				require_once('module/buy.php');
+			}
+			else
+			{
+				require_once('module/userhome.php');
+			}
+		}
+		if($_REQUEST['o'] == "login")
 		{
 			require_once('user/list.php');
 		}
+		
 	}
 	else
 	{
-		echo $_SESSION['user'];
+		require_once('module/userhome.php');
 	}	
 
+	echo $content;
 ?>
