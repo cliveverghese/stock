@@ -16,5 +16,16 @@
 			week_high DECIMAL(15,2), 
 			change_perc DECIMAL(15,2))";
 	$ref = mysql_query($sql);
+	$sql = "CREATE TABLE IF NOT EXISTS user (
+			id BIGINT NOT NULL UNIQUE,
+			name VARCHAR(40),
+			liq_cash DECIMAL(15,2),
+			market_val DECIMAL(15,2),
+			rank INT,
+			day_worth DECIMAL(15,2),
+			week_worth DECIMAL(15,2),
+			short_val DECIMAL(15,2))";
+	$ref = mysql_query($sql);
+
 ?>
 
