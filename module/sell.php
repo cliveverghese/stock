@@ -9,9 +9,11 @@ if(isset($_SESSION['user']))
 		{
 				$sym = mysql_real_escape_string(urldecode($_POST['sym']));
 				$amount = mysql_real_escape_string($_POST['amount']);
+				$amountCpy = $amount;
 				$sql = "SELECT value FROM stockval WHERE symbol = '$sym'";
 				$ref = mysql_query($sql);
 				$row = mysql_fetch_assoc($ref);
+				$rate = $row['value'];
 				$cost = $amount * $row['value'];
 				$sql = "SELECT liq_cash FROM user WHERE id = '" . $_SESSION['id'] . "'";
 				$ref = mysql_query($sql);
@@ -30,6 +32,7 @@ if(isset($_SESSION['user']))
 					
 					$sql = "UPDATE stocks_bought SET amount = '$amount' WHERE id = '" . $_SESSION['id'] . "' and symbol = '$sym'";
 					$ref = mysql_query($sql);
+					$content .= "Sold $amountCpy Units of $sym at $rate <br /><br />";
 					$content .= '<a href = "index.php">home</a>';
 				}
 				else

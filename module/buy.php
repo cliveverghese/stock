@@ -9,11 +9,13 @@ if(isset($_SESSION['user']))
 		{
 				$sym = mysql_real_escape_string(urldecode($_POST['sym']));
 				$amount = mysql_real_escape_string($_POST['amount']);
+				$amountCpy = $amount;
 				$sql = "SELECT value FROM stockval WHERE symbol = '$sym'";
 				$ref = mysql_query($sql);
 				$row = mysql_fetch_assoc($ref);
 				$cost = $amount * $row['value'];
 				$rate = $row['value'];
+				$rateCpy = $rate;
 				$sql = "SELECT liq_cash FROM user WHERE id = '" . $_SESSION['id'] . "'";
 				$ref = mysql_query($sql);
 				$row = mysql_fetch_assoc($ref);
@@ -37,11 +39,12 @@ if(isset($_SESSION['user']))
 						$sql = "UPDATE stocks_bought SET amount = '$amount', rate = '$rate' WHERE id = '" . $_SESSION['id'] . "' and symbol = '$sym'";
 					}
 					$ref = mysql_query($sql);
+					$content .= "Purchased $amountCpy Units of $sym at $rateCpy <br /><br />";
 					$content .= '<a href = "index.php">home</a>';
 				}
 				else
 				{
-					$content .= "Insufficient Funds";
+					$content .= "Insufficient Funds<br />";
 					$content = $content . '<a href = "index.php">home</a>';
 				}
 
