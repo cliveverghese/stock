@@ -1,6 +1,11 @@
 <?php
 	session_start();		
 	require_once('core/bootstrap.php');
+	
+	if(isset($_REQUEST["signed_request"]))
+	{	
+	require_once('user/verify.php');
+	}
 	$content = null;
 	if(isset($_REQUEST['o']))
 	{	
@@ -22,6 +27,7 @@
 			else
 			{
 				require_once('module/userhome.php');
+
 			}		
 }
 		else if($_REQUEST['o'] == "login")
@@ -36,6 +42,6 @@
 	{
 		require_once('module/userhome.php');
 	}	
-
-	echo $content;
+	require_once('theme/userprofile.php');
+	
 ?>

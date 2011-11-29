@@ -19,15 +19,19 @@
 	$sql = "CREATE TABLE IF NOT EXISTS user (
 			id BIGINT NOT NULL UNIQUE,
 			name VARCHAR(40),
-			liq_cash DECIMAL(15,2),
+			liq_cash DECIMAL(15,2) DEFAULT 25000,
 			market_val DECIMAL(15,2),
 			rank INT,
+			college VARCHAR(200),
+			email VARCHAR(200),
 			day_worth DECIMAL(15,2),
 			week_worth DECIMAL(15,2),
 			short_val DECIMAL(15,2))";
 	$ref = mysql_query($sql);
 	$sql = "CREATE TABLE IF NOT EXISTS stocks_bought(
 			id BIGINT NOT NULL,
+			rate DECIMAL(15,2),
+			time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
 			symbol VARCHAR(20) NOT NULL,
 			amount BIGINT NOT NULL)";
 	$ref = mysql_query($sql);

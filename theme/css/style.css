@@ -1,0 +1,28 @@
+body{
+	margin:0px;
+	padding:0px;
+}
+
+.portfolio{
+	margin:0px;
+	padding:0px;
+	width:70%;
+	float:left;
+	height:300px;
+}
+
+.window{
+	margin:0px;
+	padding:0px;
+	width:29%;
+	float:right;
+	height:300px;
+}
+
+.stocks{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:400px;
+
+}

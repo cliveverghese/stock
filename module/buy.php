@@ -7,12 +7,13 @@ if(isset($_SESSION['user']))
 		$form = true;
 		if(isset($_POST['sym']) && isset($_POST['amount']))
 		{
-				$sym = mysql_real_escape_string($_POST['sym']);
+				$sym = mysql_real_escape_string(urldecode($_POST['sym']));
 				$amount = mysql_real_escape_string($_POST['amount']);
 				$sql = "SELECT value FROM stockval WHERE symbol = '$sym'";
 				$ref = mysql_query($sql);
 				$row = mysql_fetch_assoc($ref);
 				$cost = $amount * $row['value'];
+				$rate = $row['value'];
 				$sql = "SELECT liq_cash FROM user WHERE id = '" . $_SESSION['id'] . "'";
 				$ref = mysql_query($sql);
 				$row = mysql_fetch_assoc($ref);
@@ -26,13 +27,14 @@ if(isset($_SESSION['user']))
 					$count = mysql_num_rows($ref);
 					if($count == 0)
 					{
-						$sql = "INSERT INTO stocks_bought(id,symbol,amount) VALUES ('" . $_SESSION['id'] . "','$sym','$amount')";
+						$sql = "INSERT INTO stocks_bought(id,symbol,amount,rate) VALUES ('" . $_SESSION['id'] . "','$sym','$amount','$rate')";
 					}
 					else
 					{		
 						$row = mysql_fetch_assoc($ref);
+						$rate = ($rate * $amount + $row['amount'] * $row['rate'])/($amount + $row['amount']); 
 						$amount += $row['amount'];
-						$sql = "UPDATE stocks_bought SET amount = '$amount' WHERE id = '" . $_SESSION['id'] . "' and symbol = '$sym'";
+						$sql = "UPDATE stocks_bought SET amount = '$amount', rate = '$rate' WHERE id = '" . $_SESSION['id'] . "' and symbol = '$sym'";
 					}
 					$ref = mysql_query($sql);
 					$content .= '<a href = "index.php">home</a>';

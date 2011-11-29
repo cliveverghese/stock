@@ -7,7 +7,7 @@ if(isset($_SESSION['user']))
 		$form = true;
 		if(isset($_POST['sym']) && isset($_POST['amount']))
 		{
-				$sym = mysql_real_escape_string($_POST['sym']);
+				$sym = mysql_real_escape_string(urldecode($_POST['sym']));
 				$amount = mysql_real_escape_string($_POST['amount']);
 				$sql = "SELECT value FROM stockval WHERE symbol = '$sym'";
 				$ref = mysql_query($sql);

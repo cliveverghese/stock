@@ -13,7 +13,13 @@ if(isset($_SESSION['user']))
 	$content .= "<table>";
 	while($row = mysql_fetch_assoc($ref))
 	{	
-		$content .= "<tr><td>" . $row['symbol'] . "</td><td>" . $row['amount'] . "</td><td><a href = \"index.php?o=sell&sym=" . $row['symbol'] ."\">sell</a></tr>";
+		if($row['amount'] != 0)
+		{
+			$sql = "SELECT value FROM stockval WHERE symbol = '" . $row['symbol'] . "'";
+			$temp_ref = (mysql_query($sql));
+			$rate = mysql_fetch_assoc($temp_ref);
+			$content .= "<tr><td>" . $row['symbol'] . "</td><td>" . $row['amount'] . "</td><td>" . $row['rate'] . "</td><td>" . $rate['value'] . "</td><td><a href = \"index.php?o=sell&sym=" . urlencode($row['symbol']) ."\">sell</a></tr>";
+		}
 	}
 	
 	$content .= "</table>";
