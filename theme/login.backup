@@ -1,0 +1,9 @@
+<!--<script type = "text/javascript" src = "theme/js/fb.js"></script> 
+
+			<script type = "text/javascript">
+				$(document).ready(function(){
+					$('#slow').animate({opacity:"1"});
+				});
+			</script>
+-->
+<script type = "text/javascript" src = "theme/js/jquery.js"></script>

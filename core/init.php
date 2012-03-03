@@ -26,6 +26,21 @@ function file_get_contents_curl($url) {
 		$sql = "INSERT INTO stockval(symbol) VALUES ('" . $data->{'symbol'} . "')";
 	 	$ref = mysql_query($sql);
 	}
+	$jsn = file_get_contents_curl("http://nseindia.com/live_market/dynaContent/live_watch/stock_watch/juniorNiftyStockWatch.json");
+	$jsn_obj = json_decode($jsn);
+	foreach($jsn_obj->{'data'} as $data)
+	{
+		$sql = "INSERT INTO stockval(symbol) VALUES ('" . $data->{'symbol'} . "')";
+	 	$ref = mysql_query($sql);
+	}
+	$jsn = file_get_contents_curl("http://nseindia.com/live_market/dynaContent/live_watch/stock_watch/niftyMidcap50StockWatch.json");
+	$jsn_obj = json_decode($jsn);
+	foreach($jsn_obj->{'data'} as $data)
+	{
+		$sql = "INSERT INTO stockval(symbol) VALUES ('" . $data->{'symbol'} . "')";
+	 	$ref = mysql_query($sql);
+	}
+
 ?>
 
 

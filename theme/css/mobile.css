@@ -1,0 +1,125 @@
+a, a:visited{
+	text-decoration:none;
+	color:#1d4088;
+}
+#user{
+	height:0px;
+	width:0px;
+	overflow:hidden;
+}
+
+#buyArea{
+	background:white;
+	height:0px;
+	background:#f1f1f1;
+	width:100%;
+	position:fixed;
+	bottom:0px;
+	overflow:hidden;
+	z-index:1001;
+}
+#buyAreaContent{
+	text-align:center;
+}
+#refreshing{
+	background:url(http://conjura.in/bullsndbears/theme/images/loading.gif);
+	height:0px;
+	width:24px;
+	position:fixed;
+	top:30px;
+	left:0px;
+	overflow:hidden;
+	z-index:1002;
+	
+}
+.portfolio_box{
+	float:left;
+	margin-left:2%;
+	position:relative;
+	width:17%;
+	height:50px;
+	overflow:hidden;
+	
+	
+}
+.portfolio_box_title{
+	position:absolute;
+	top:0px;
+	left:0px;
+
+}
+span.portfolio_box_title{
+	font-style:bold
+}
+.portfolio_box_content{
+	position:absolute;
+	bottom:0px;
+	left:5px;
+
+}
+.like-box{
+	float:left;
+	position:absolute;
+	z-index:1001;
+}
+#portfolio_image{
+	
+	
+
+}
+#portfolio_name{
+	
+
+}
+
+#portfolio_balance{
+	
+
+}
+
+#portfolio_intraday{
+	
+}
+
+#portfolio_profit{
+
+}
+
+	
+
+.winner{
+	text-align:center;
+	margin-left:24%;
+	float:left;
+	padding:3px;
+	border:solid;
+	
+}
+.name{
+	width:100%;
+	padding-top:6px;
+}
+.college{
+	width:100%;
+}
+
+#content,#stock{
+	width:100%;
+}
+#bottombar{
+	clear:both;
+}
+
+div {
+width: 98%;
+}
+
+.up{
+
+	color:#117922;
+}
+.down{
+
+	color:#6b0d0d;
+}
+

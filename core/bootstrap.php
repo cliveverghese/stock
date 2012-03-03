@@ -18,4 +18,24 @@ function file_get_contents_curl($url) {
 	
 	return $data;
 }
+function query_database($sql)
+{
+	$return = false;
+
+	$i = 0;
+	$error = null;
+	while(!$return && $i != 5)
+	{
+		$return = mysql_query($sql);
+		if(!$return)
+		{
+			$error= mysql_error();
+			$error .= " " . $sql;
+			error_log($error);
+		}
+		$i++;
+	}
+	
+	return $return;
+}
 

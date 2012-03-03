@@ -1,0 +1,65 @@
+body{
+	margin:0px;
+	padding:0px;
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+}
+#logo{
+	padding-left:4px;
+	float:left;
+}
+#logo_sponsers{
+	position:absolute;
+	
+	width:100%;
+	margin-top:15%;
+	z-index:-1;
+	text-align:center;
+	
+}
+#topBar{
+	background:#f1f1f1;
+	height:30px;
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+}
+
+#bottomBar{
+	text-align:center;
+	background:#f1f1f1;
+	height:63px;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	right:0px;
+
+}
+#bottomBarBulls{
+	padding:0px;
+	margin:0px;
+	padding-top:1px;
+}
+
+#slow{
+	font-size:12px;
+	position:fixed;
+	bottom:50px;
+	right:0px;
+	padding-right:30px;
+	padding-bottom:5px;
+}
+
+#user{
+	font-size:20px;
+	margin-top:40%;
+	text-align:center;
+	position:fixed;
+	right:0px;
+	left:0px;
+	
+}
+a, a:visited{
+	text-decoration:none;
+}
+	

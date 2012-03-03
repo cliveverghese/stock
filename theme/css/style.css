@@ -1,28 +1,291 @@
 body{
 	margin:0px;
 	padding:0px;
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
 }
-
-.portfolio{
-	margin:0px;
-	padding:0px;
-	width:70%;
+@media screen and (min-width: 479px)	
+{
+#logo{
+	padding-left:5px;
+	padding-top:5px;		
 	float:left;
-	height:300px;
 }
-
-.window{
+#nav{
 	margin:0px;
-	padding:0px;
-	width:29%;
-	float:right;
-	height:300px;
-}
-
-.stocks{
-	margin:0px;
-	padding:0px;
+	height:40px;
 	width:100%;
-	height:400px;
+	background:#f1f1f1;
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:100;
+}
+#bottombar{
+	margin:0px;
+	height:63px;
+	width:100%;
+	background:#f1f1f1;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	z-index:1000;
+	text-align:center;
+}
+#bottombarbulls{
+	margin:auto;
+	font-size:10px;
+	padding-top:2px;
+	height:40px;
+	
+}
+.bottombarpoweredby{
+	font-size:10px;
+	padding-bottom:5px;
+	
+	
+}
+#notification{
+	width:100%;
+	background:#e5f9d6;
+	position:fixed;
+	top:40px;
+	
+	z-index:100;
+	text-align:center;
+	overflow:hidden;
+	
+}
+#nav ul{
+	margin-top:0px;
+	padding-top:0px;
+	display:block;
+	height:30px;
+}
 
+#mainNav {
+	margin:0px;
+	width:100%;
+	margin-left:20px;
+	font-size:15px;
+}
+#mainNav li{
+	display:block;
+	height:28px;
+	list-style:none;
+	float:left;
+	margin-left:10px;
+	padding-top:10px;
+	
+	
+}
+ul#page{
+	margin:auto;
+}
+.anchor{
+	float:left;
+	width:43%;
+	display:block;
+	height:1px;
+}
+#page li{
+	float:left;
+	margin-left:10px;
+	list-style:none;
+	display:block;
+}	
+#content{
+	margin-left:5%;
+	margin-top:60px;
+	margin-bottom:50px;
+	width:90%;
+	position:absolute;
+	z-index:10;
+
+}
+#stock{
+	position:absolute;
+	margin:auto;
+
+	z-index:11;
+	width:100%;
+	
+}
+#balanceUser{
+	position:absolute;
+	right:4px;
+	padding-top:4px;
+	color:#1d4088;
+}
+table{
+	margin-bottom:30px;
+	width:100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid #ababab;
+}
+table td,th{
+text-align:center;
+padding-right:6px;
+padding-left:6px;
+}
+tr > th{
+	padding-bottom:7px;
+}
+tr > td{
+	padding-bottom:3px;
+	padding: 5px;
+border: 1px solid #ababab;
+}
+tr:nth-child(even){
+	background:#F6F8F9;
+}
+	
+table tr{
+	margin-bottom:12px;
+}
+form{
+	margin:0px;
+
+}
+h3{
+	text-align:center;
+	padding-bottom:5px;
+	margin-bottom:5px;
+}
+}
+a, a:visited{
+	text-decoration:none;
+	color:#1d4088;
+}
+#user{
+	height:0px;
+	width:0px;
+	overflow:hidden;
+}
+
+#buyArea{
+	background:white;
+	height:0px;
+	background:#f1f1f1;
+	width:100%;
+	position:fixed;
+	bottom:0px;
+	overflow:hidden;
+	z-index:1001;
+}
+#buyAreaContent{
+	text-align:center;
+}
+#refreshing{
+	background:url(http://conjura.in/bullsndbears/theme/images/loading.gif);
+	height:0px;
+	width:24px;
+	position:fixed;
+	top:30px;
+	left:0px;
+	overflow:hidden;
+	z-index:1002;
+	
+}
+.portfolio_box{
+	float:left;
+	margin-left:2%;
+	position:relative;
+	width:17%;
+	height:50px;
+	overflow:hidden;
+	
+	
+}
+.portfolio_box_title{
+	position:absolute;
+	top:0px;
+	left:0px;
+
+}
+span.portfolio_box_title{
+	font-style:bold
+}
+.portfolio_box_content{
+	position:absolute;
+	bottom:0px;
+	left:5px;
+
+}
+.like-box{
+	float:left;
+	position:absolute;
+	z-index:1001;
+}
+#portfolio_image{
+	
+	
+
+}
+#portfolio_name{
+	
+
+}
+
+#portfolio_balance{
+	
+
+}
+
+#portfolio_intraday{
+	
+}
+
+#portfolio_profit{
+
+}
+
+	
+
+.winner{
+	text-align:center;
+	margin-left:24%;
+	float:left;
+	padding:3px;
+	border:solid;
+	
+}
+.name{
+	width:100%;
+	padding-top:6px;
+}
+.college{
+	width:100%;
+}
+.up{
+	background:url(../images/uparrow.gif) no-repeat 22% 50%;
+	color:#117922;
+}
+.down{
+	background:url(../images/downarrow.gif) no-repeat 22% 50%;
+	color:#6b0d0d;
+}
+.green{
+	color:green;
+}
+.red{
+	color:red;
+}
+#tickerData{
+	margin:0px;
+	left:0px;
+	right:0px;
+	font-size:10px;
+	position:fixed;
+	top:40px;
+	width:100%;
+	z-index:50;
+	background:#f2f2f2;
+}
+
+@media handheld {
+
+div {
+width: 98%;
+}
 }

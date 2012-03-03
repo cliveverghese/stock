@@ -1,0 +1,4 @@
+<li><a class = "Navigation" href = "index.php?o=portfolio">Portfolio</a></li>
+			<li><a class = "Navigation" href = "index.php?o=listStocks">List of Stocks</a></li>
+			<li><a class = "Navigation" href = "index.php?o=pending">Pending</a></li>
+			<li><a class = "Navigation" href = "index.php?o=notifications">Notifications</a></li>
